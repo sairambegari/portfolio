@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alex Thompson - Full Stack Developer Portfolio showcasing modern web development projects and skills">
+    <meta name="author" content="Alex Thompson">
+    <title>Sairam | Portfolio</title>
+    
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+</head>
+<body>
+    <!-- Canvas for Three.js background -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- CSS Particle Background Alternative -->
+    <div class="css-particles"></div>
+    
+    <!-- GitHub Corner Ribbon -->
+    <!-- <a href="#" class="github-corner" aria-label="View source on GitHub">
+        <svg width="80" height="80" viewBox="0 0 250 250" style="fill:var(--clr-primary); color:var(--clr-bg); position: absolute; top: 0; border: 0; right: 0; z-index: 1000;">
+            <path d="m0,0 0,250 250,250 0,-250z"></path>
+            <path d="m128.3,109.0 c113.8,99.7 119.0,89.6 119.0,89.6 0,0 16.6,-13.2 16.6,-30.3 0,-17.4 -18.5,-30.4 -41.6,-30.4 -26.0,0 -46.9,21.8 -47.9,49.3 -0.5,14.9 6.2,25.9 13.6,30.2 5.3,3.1 6.1,5.8 6.1,9.0 0,3.2 -2.1,5.8 -5.8,5.8 -3.5,0 -6.3,-2.4 -6.3,-6.2 0,-3.8 2.2,-7.5 6.2,-9.5 3.8,-1.9 6.2,-5.4 6.2,-9.2 0,-9.2 -7.5,-16.7 -16.7,-16.7 -9.2,0 -16.7,7.5 -16.7,16.7 0,3.8 2.4,7.3 6.2,9.2 4.0,2.0 6.2,5.7 6.2,9.5 0,3.8 -2.8,6.2 -6.3,6.2 -3.7,0 -5.8,-2.6 -5.8,-5.8 0,-3.2 0.8,-5.9 6.1,-9.0 7.4,-4.3 14.1,-15.3 13.6,-30.2 -1.0,-27.5 -21.9,-49.3 -47.9,-49.3 -23.1,0 -41.6,13.0 -41.6,30.4 0,17.1 16.6,30.3 16.6,30.3s5.2,10.1 119.0,-89.6z" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path d="M 115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+        </svg>
+    </a> -->
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar__container">
+            <div class="navbar__brand">
+                <span class="navbar__logo"><b>Sairam Begari</b></span>
+            </div>
+            
+            <input type="checkbox" id="navbar__toggle" class="navbar__toggle" aria-label="Toggle navigation menu">
+            <label for="navbar__toggle" class="navbar__hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="#hero" class="navbar__link" aria-label="Go to hero section">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#about" class="navbar__link" aria-label="Go to about section">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#projects" class="navbar__link" aria-label="Go to projects section">Projects</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#skills" class="navbar__link" aria-label="Go to skills section">Skills</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#contact" class="navbar__link" aria-label="Go to contact section">Contact</a>
+                </li>
+                <li class="navbar__item">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                        <span class="theme-toggle__icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <img src="/assets/icons/fp.jpg" 
+                         alt="Begari Sairam profile photo" 
+                         class="hero__image" 
+                         loading="lazy">
+                    <h1 class="hero__title">
+                        <span id="typewriter-text">Hi, I'm Begari Sairam</span>
+                        <span class="hero__cursor">|</span>
+                    </h1>
+                    <p class="hero__subtitle"> UI/UX Enthusiast</p>
+                    <div class="hero__cta">
+                        <a href="#contact" class="btn btn--primary">Get In Touch</a>
+                        <a href="Sairam Begari.pdf" class="btn btn--secondary" download>Download CV</a>
+                    </div>
+                </div>
+                <!-- <div class="hero__scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                    Scroll to explore
+                </div> -->
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section__title">About Me</h2>
+                <div class="about__content">
+                    <p class="about__text">
+                        Hey, I’m Sairam — a student who loves building cool, clean websites and learning by doing. I’m diving deep into Java and web dev, always chasing better code and sharper skills. I’m big on routines, habit streaks, and turning everyday challenges into progress.
+                    </p> <p class="about__text">
+                        Right now, I’m working on projects that mix solid logic with visual flair — all built from scratch, no shortcuts.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Certificates Section -->
+<section id="certificates" class="certificates">
+  <div class="container">
+    <h2 class="section__title">Certificates</h2>
+
+    <!-- Carousel -->
+    <div class="carousel" tabindex="0" aria-label="Certificates carousel (auto-scrolling). Pause on hover or focus.">
+      <div class="carousel-track">
+        <!-- Repeat/replace these items with your uploaded certificate thumbnails -->
+        <figure class="carousel-item" data-title="C# intro — Microsoft" data-year="2025">
+          <img src="/assets/csharp.png" alt="Certificate: C# intro " loading="lazy">
+          <figcaption>C# intro — Microsoft</figcaption>
+        </figure>
+
+        <figure class="carousel-item" data-title="C# GPA Project — Microsoft" data-year="2025">
+          <img src="/assets/gpa.png" alt="Certificate: Microsoft" loading="lazy">
+          <figcaption>C# GPA Project — Microsoft</figcaption>
+        </figure>
+
+        <figure class="carousel-item" data-title=".NET intro — Microsoft" data-year="2025">
+          <img src="/assets/net.png" alt="Certificate: .NET intro" loading="lazy">
+          <figcaption>.NET intro — Microsoft</figcaption>
+        </figure>
+
+        <!-- add as many as you like -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal (hidden by default) -->
+<div id="cert-modal" class="cert-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <button id="cert-modal-close" class="cert-modal-close" aria-label="Close">✕</button>
+  <img id="cert-modal-img" src="" alt="">
+  <div id="cert-modal-meta" class="cert-modal-meta">
+    <h3 id="cert-modal-title"></h3>
+    <a id="cert-modal-download" href="#" download class="btn btn--secondary">Download</a>
+  </div>
+</div>
+
+        
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section__title">Featured Projects</h2>
+                <div class="projects__grid">
+                    <article class="project-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" 
+                             alt="E-commerce platform project" 
+                             class="project-card__image" 
+                             loading="lazy">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Online Gaming Merchandise Store</h3>
+                            <p class="project-card__description">Modern shopping experience with Html and Node.js backend integration.</p>
+                            <div class="project-card__tech">
+                                <span class="tech-tag">Html</span>
+                                <span class="tech-tag">Css</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop" 
+                             alt="Task management app project" 
+                             class="project-card__image" 
+                             loading="lazy">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Fintech AI </h3>
+                            <p class="project-card__description">Collaborative productivity tool with real-time updates and intuitive design made in Quanta-Nova v.1 Hackathon.</p>
+                            <div class="project-card__tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Superbase</span>
+                                <span class="tech-tag">Deepseek integration</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section__title">Technical Skills</h2>
+                <div class="skills__grid">
+                    <div class="skill-card">
+                        <img src="assets/icons/html.png" alt="HTML5 programming language" class="skill-card__icon">
+                        <span class="skill-card__label">HTML5</span>
+                    </div>
+                     <div class="skill-card">
+                        <img src="assets/icons/python.png" alt="Python programming language" class="skill-card__icon">
+                        <span class="skill-card__label">Python</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/icons/java.png" alt="Java programming language" class="skill-card__icon">
+                        <span class="skill-card__label">Java</span>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="assets/icons/javascript.png" alt="JavaScript programming language" class="skill-card__icon">
+                        <span class="skill-card__label">JavaScript</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/icons/css.svg" alt="CSS3 stylesheet language" class="skill-card__icon">
+                        <span class="skill-card__label">CSS3</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/icons/react.svg" alt="React framework" class="skill-card__icon">
+                        <span class="skill-card__label">React</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/icons/cpp.png" alt="C++ programming language" class="skill-card__icon">
+                        <span class="skill-card__label">C++</span>
+                    </div>
+                   
+                    <div class="skill-card">
+                        <img src="assets/icons/csharp.png" alt="C# programming language" class="skill-card__icon">
+                        <span class="skill-card__label">C#</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section__title">Get In Touch</h2>
+                <div class="contact__content">
+                    <p class="contact__intro">Ready to collaborate? Send me a message and let's create something amazing together.</p>
+                    
+                    <form class="contact__form" id="contact-form"  method="post" action="mailto:bsairam027@gmail.com">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                            <span class="form-error" id="name-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <span class="form-error" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                            <span class="form-error" id="message-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Font Awesome CDN (for icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer class="footer">
+  <div class="footer__socials">
+    <a href="https://www.linkedin.com/in/sairambegari" target="_blank" class="footer__icon">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/sairambegari" target="_blank" class="footer__icon">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="mailto:bsairam027@gmail.com" class="footer__icon">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.instagram.com/sairamsai73" target="_blank" class="footer__icon">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  </div>
+  <p class="footer__copy">© 2025 Sairam Begari. All rights reserved.</p>
+</footer>
+
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
